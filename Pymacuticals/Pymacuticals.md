@@ -33,5 +33,5 @@ To do this you are tasked with:
 
 #### Drug Capomulin is consistently causing lower Tumor Volume Growth in sample mice population during the 45 day period
 
-![Laboratory](Images/TumorVolumneGrowth.png)
+![Laboratory](Images/TumorVolumneGrowthBar.png)
 
