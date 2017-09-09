@@ -23,7 +23,7 @@ To do this you are tasked with:
 ![Laboratory](Images/TumorVolumneGrowth.png)
 
 
-#### Drug Capomulin is consistently causing lower metastatic sites compared to other 2 drugs evaluated.
+#### Drug Infubinol is better at causing lower metastatic sites compared to other 2 drugs over longer period of time.
 
 ![Laboratory](Images/MetastaticsiteGrowth.png)
 
