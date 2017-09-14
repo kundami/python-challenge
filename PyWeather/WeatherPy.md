@@ -1,4 +1,4 @@
-## Wather Py
+## Weather Py
 
 ![Screenshot](Images/4936006-rainy-pictures.jpg)
 
