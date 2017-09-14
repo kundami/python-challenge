@@ -1,6 +1,6 @@
-## Pymaceuticals Inc
+## Wather Py
 
-![Laboratory](Images/4936006-rainy-pictures)
+![Screenshot](Images/4936006-rainy-pictures.jpg)
 
 WeatherPy Problem Statement
 
