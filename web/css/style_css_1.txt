@@ -1,0 +1,21 @@
+.portfolio {
+    margin-left: 25px;
+    margin-bottom: 10px;
+    margin-top: 25px;
+}
+
+.panel-heading {
+background:#FFCCFF;
+}
+
+.values {
+    font-weight: bold;
+}
+
+.user-block {
+    padding-bottom: 30px;
+}
+
+.image-row {
+    padding-bottom: 10px;
+}

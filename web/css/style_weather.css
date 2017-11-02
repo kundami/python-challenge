@@ -1,0 +1,15 @@
+.sidebarContent(
+   margin-bottom:10px;
+   min-height:150px;
+   background-color:silver;
+   text-align:center;
+   font-size:large;
+}
+.mainContent(
+   margin-bottom:10px;
+   min-height:30px;
+   background-color:silver;
+   text-align:center;
+   font-size:large;
+}
+
