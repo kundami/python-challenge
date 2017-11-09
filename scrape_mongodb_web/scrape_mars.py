@@ -15,6 +15,7 @@ mongo = PyMongo(app)
 @app.route('/')
 def index():
     mars_facts = mission_to_mars.read_from_mongodb("mars_facts")
+    #hard coding for noe..
     return render_template('index.html', mars_facts=mars_facts)
 
 

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission To Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <!-- Localhost not picking up css file -->
+ <link rel="stylesheet" type="text/css" href="css/positioning.css">
+ <style>
+    /*
+      NOTE: Commenting is a bit different in CSS. 
+      They start with forward-slash + asterisk 
+      and end with back-slash + asterisk.
+      */
+    /* h1 heading tag */
+    
+    h1 {
+      /* Put a 15-pixel margin at the bottom of the heading. */
+      margin-bottom: 15px;
+      /* Change the size of your font to 60 pixels high. */
+      font-size: 60px;
+      /* This will color the heading font white. */
+      color: white;
+      /* Align the text to the center of its enclosing element (e.g. div). */
+      text-align: center;
+     
+     /* The background of the heading element will now be black. */
+      background-color: grey;
+    }
+    /* h2 heading tags */
+    
+    h2 {
+      /* Put a 15-pixel margin at the top of all h2 headings. */
+      margin-top: 15px;
+      margin-bottom: 15px;
+      font-size: 40px;
+      text-align: left;
+    }
+    /* h3 heading tags */
+    
+    h3 {
+      margin-top: 15px;
+      font-size: 20px;
+      text-align: left;
+    }
+    /* All img tags */
+    
+    img {
+      /* 
+        Center a block element in the middle of its enclosing tag.
+        When you use the "auto" rule on both left and right margins, 
+        your browser will do the math necessary to center a block element.
+        */
+      margin-left: auto;
+      margin-right: auto;
+
+      /* Block display (more on this later) */
+      display: block;
+    }
+    /* All p tags */
+    
+    p {
+      text-align: left;
+      font-size: 15px;
+      /* Bold the text. */
+      font-weight: bold;
+    }
+    /* All unordered list tags */
+    
+    .FloatExample {
+      float: left;
+    }
+
+    .special_p {
+     text-align: center;
+      font-size: 25px;
+      /* Bold the text. */
+      font-weight: bold; 
+    }
+
+    .FloatLeft {
+      float: left;
+    }
+  </style>
+</head>
+
+<body>
+  <div clas="container">
+    <div class="jumbotron text-center">
+      <h1>Mission To Mars</h1>
+      <p class="special_p"><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+    </div>
+      
+    <!-- Mars data -->
+    <div class="row">
+      <div class="col-xs-12">
+        <h3>Latest Mars News</h3>
+        <p>Each dot represents an asteroid or comet that the mission observed.</p>
+         </div> 
+         </div>
+       <div class="row">   
+         <div class="col-xs-8">
+         <p>   
+         <img class="img-responsive" src="https://www.jpl.nasa.gov/spaceimages/images/mediumsize/PIA19101_ip.jpg" alt="jpl.nasa.gov" style="width:700px;height:500px;"> </p>      
+       </div>
+
+
+
+         <div class="col-xs-4">
+           <div class="row">
+          <div class="col-xs-12">
+           <section id="full">
+           <aside>  
+           <h4>Latest Weather</h4> 
+              <p>Sol 1867 (Nov 06, 2017), Sunny, high -24C/-11F, low -78C/-108F, pressure at 8.48 hPa, daylight 05:55-17:38</p>
+            </aside>
+          </section>
+          </div>
+           <div class="col-xs-12">
+           <section id="full">
+           <aside>  
+           
+<table border="1">
+    <thead>
+      <tr>
+        <th colspan="4">Mars Facts</th>
+      </tr>
+      <tr>
+        <th>Description</th>
+        <th>Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Mars Mass</td>
+        <td>
+            <p>6.42 x 10^23 kg (10.7% Earth)</p>          
+        </td>
+      </tr>
+      <tr>
+        <td>Mars Orbit Period</td>
+        <td><p>687 days (1.9 years)
+</p> </td>
+      </tr>
+
+        <tr>
+        <td>Mars Polar Diameter</td>
+        <td><p>6,752 km
+</p> </td>
+      </tr>
+
+      <tr>
+        <td>Mars Moons</td>
+        <td><p>2 (Phobos &amp; Deimos)</p> </td>
+      </tr>
+
+      <tr>
+        <td>Mars Orbit Distance</td>
+        <td><p>227,943,824 km (1.52 AU)</p> </td>
+      </tr>
+
+      <tr>
+        <td>Mars Surface Temperature</td>
+        <td><p></p> </td>
+      </tr>
+
+      <tr>
+        <td>Mars First Record </td>
+        <td><p>2nd millennium BC</p> </td>
+      </tr>
+
+      <tr>
+        <td>Recorded By </td>
+        <td><p>Egyptian astronomers</p> </td>
+      </tr>
+
+       </tbody>
+      <tfoot>
+      <tr>
+      </tr>
+    </tfoot>
+  </table>
+
+
+            </aside>
+          </section>
+          </div>   
+           </div>
+          </div>   
+
+       </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

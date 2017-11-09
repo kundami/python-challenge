@@ -23,7 +23,7 @@ from itertools import cycle, islice
 # In[21]:
 
 def insert_into_mongodb(coll_name,parse_tree):
-    conn = 'mongodb://kundami:Malala14@ds243325.mlab.com:43325/heroku_lw7zbvwq'
+    conn = 'mongodb://xxxxx:XXXXXX@ds243325.mlab.com:43325/heroku_lw7zbvwq'
     client = pymongo.MongoClient(conn)
 
     # Define database and collection
@@ -114,7 +114,7 @@ def scrape_mission_to_mars():
 # In[25]:
 
 def read_mongod(coll_name):
-    conn = 'mongodb://kundami:Malala14@ds243325.mlab.com:43325/heroku_lw7zbvwq'
+    conn = 'mongodb://xxxxx:XXXXXX@ds243325.mlab.com:43325/heroku_lw7zbvwq'
     client = pymongo.MongoClient(conn)
     # Define database and collection
     try:
@@ -289,7 +289,7 @@ all_about_mars()
 # In[40]:
 
 def read_from_mongodb(coll_name):
-    conn = 'mongodb://kundami:Malala14@ds243325.mlab.com:43325/heroku_lw7zbvwq'
+    conn = 'mongodb://xxxxx:XXXXXX@ds243325.mlab.com:43325/heroku_lw7zbvwq'
     client = pymongo.MongoClient(conn) 
     # Define database and collection
     try:
