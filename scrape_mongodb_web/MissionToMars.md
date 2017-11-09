@@ -1,6 +1,6 @@
 ## Mission To Mars
 
-![Screenshot](Images/MissionToMars.jpg)
+![Screenshot](images/MissionToMars.jpg)
 
 
 ## Solution Package
