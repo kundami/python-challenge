@@ -1,0 +1,97 @@
+Step 1: Read the problem and come up with your analysis .
+Time :10 mins
+Total estimate : 4 hrs....
+
+       what is the problem ?
+       create a flask application and host in Heroku that publishes
+       multiple apis for data :
+   
+Flask API with Keroku  -2 hrs.
+
+Flask API without inr       
+```python
+@app.route("/")
+    """Return the dashboard homepage."""
+```
+```python
+@app.route('/names')
+    """List of sample names.
+
+    Returns a list of sample names in the format
+    [
+        "BB_940",
+        "BB_941",
+        "BB_943",
+        "BB_944",
+        "BB_945",
+        "BB_946",
+        "BB_947",
+        ...
+    ]
+
+    """
+```
+```python
+@app.route('/otu')
+    """List of OTU descriptions.
+
+    Returns a list of OTU descriptions in the following format
+
+    [
+        "Archaea;Euryarchaeota;Halobacteria;Halobacteriales;Halobacteriaceae;Halococcus",
+        "Archaea;Euryarchaeota;Halobacteria;Halobacteriales;Halobacteriaceae;Halococcus",
+        "Bacteria",
+        "Bacteria",
+        "Bacteria",
+        ...
+    ]
+    """
+```
+```python
+@app.route('/metadata/<sample>')
+
+```
+```python
+@app.route('/wfreq/<sample>')
+@app.route('/samples/<sample>')
+    """OTU IDs and Sample Values for a given sample.
+
+    Sort your Pandas DataFrame (OTU ID and Sample Value)
+    in Descending Order by Sample Value
+
+    Return a list of dictionaries containing sorted lists  for `otu_ids`
+    and `sample_values`
+
+    [
+        {
+            otu_ids: [
+                1166,
+                2858,
+                481,
+                ...
+            ],
+            sample_values: [
+                163,
+                126,
+                113,
+                ...
+            ]
+        }
+    ]
+    """
+```
+
+---
+         For completing step 1 in flask and with fill db int 4 hours
+         for simple pandas inte 2 hrs
+
+ ## Step 2 - Plotly.js - 2 hrs
+ 
+        Use bootstrap and plotly to create graphs
+
+
+        How complex it is ?
+
+        Estimated Time in solving it
+
+

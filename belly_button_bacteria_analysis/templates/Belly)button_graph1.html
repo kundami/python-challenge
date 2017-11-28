@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Events</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+ 
+</head>
+
+<body>
+
+  <div id="plot"></div>
+
+  <script src="plots_js.js"></script>
+  
+   <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="form-group">
+        <input name="SearchType" list="BBSearch" id="SearchStr"/>
+             <datalist id="BBSearch"></datalist>
+          <a id="search" class="btn btn-default">Search</a>
+        </div>
+      </div>
+
+  <select id="selDataset" onchange="getData(this.value)">
+    <option value="dataset1">DataSet1</option>
+    <option value="dataset2">DataSet2</option>
+    <option value="dataset3">DataSet3</option>
+  </select>
+</body>
+
+</html>
