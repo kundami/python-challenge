@@ -373,3 +373,148 @@ def diceRolls2(dice):
     count = Counter(value)
     x,y = count.most_common()[0]
     return x
+
+
+import pandas as pd
+import json
+pd.set_option('precision', 0)
+pd.options.display.float_format = '{:,.0f}'.format
+
+def referFriends(userInfo):
+    jsonResponse=json.loads(userInfo)
+    df = pd.DataFrame.from_dict(jsonResponse, orient='columns')
+    if 'referrerId' in df.columns:
+        grouped_df = df.groupby(['referrerId'])
+        dfg = pd.DataFrame(grouped_df.count().reset_index())
+        dfg['referralB'] = dfg['_id']*500
+        #dfg.referralB = dfg.referralB.astype(int)
+        dfm = pd.merge(df,dfg, left_on='_id',right_on='referrerId', how='left')
+        dfm.fillna(0.0,inplace=True)
+        dfm.referralB = dfm.referralB.astype(int)
+        dfm['text'] =  dfm.apply(lambda x: x['username_x']+' $'+str(x['referralB']), axis=1)
+        dfm.sort_values('text', inplace=True)
+        return dfm['text'].tolist()
+    else:
+        df['text'] =  df.apply(lambda x: x['username']+' $0', axis=1)
+        df.sort_values('text', inplace=True)
+        return df['text'].tolist()
+    #return [ "Frank01 $0", "JohnSmith $0", "Michael $1000"]
+ 
+
+def hardSurname(surname):
+    cons = ['B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M','N', 'P', 'Q', 'R', 'S', 'T', 'V', 'X', 'Z', 'W',  'Y']
+    max_count = []
+    is_cons = False
+    cons_count=0
+    for i in range(0,len(surname)):
+        if surname[i].upper() in cons:
+            is_cons = True
+            cons_count=cons_count+1
+        else:
+            is_cons = False
+        if cons_count > 0 and is_cons == False:
+            max_count.append(cons_count)
+            cons_count=0
+    print(max_count)    
+    return max(max_count)
+
+##love this
+hardSurname = lambda s: max(map(len, re.split('[aeiouAU]', s)))
+
+##my sol..
+def hardSurname(surname):
+    cons = ['B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M','N', 'P', 'Q', 'R', 'S', 'T', 'V', 'X', 'Z', 'W',  'Y']
+    max_count = [0]
+    is_cons = False
+    cons_count=0
+    for i in range(0,len(surname)):
+        #print(str(i))
+        if surname[i].upper() in cons:
+            is_cons = True
+            #print(surname[i])
+            cons_count=cons_count+1
+        else:
+            is_cons = False
+        if cons_count > 0 and is_cons == False:
+            #print(str(cons_count))
+            max_count.append(cons_count)
+            cons_count=0
+        if cons_count > 0 and i == len(surname)-1:
+            max_count.append(cons_count)
+            
+    #print(max_count)    
+    return max(max_count)
+
+from scipy.spatial import distance
+
+def distanceToSegment(p1, p2, c):
+    xdelta = p2[0]-p1[0]
+    ydelta = p2[1]-p1[1]
+
+    if (xdelta == 0 and ydelta == 0):
+        return -1
+
+    u = ( (c[0] - p1[0])*xdelta + (c[1]-p1[1])*ydelta)/(xdelta*xdelta + ydelta*ydelta)
+    closestPoint=[0,0]
+    if  u < 0 :
+        closestPoint = p1
+    if u > 1 :
+        closestPoint = p2
+    else :
+        closestPoint = [ p1[0] + u * xdelta, p1[1] + u * ydelta ]
+    #print("Inside:"+str(p1)+str(p2)+" xdelta:"+str(xdelta)+" ydelta:"+str(ydelta)+"Dist"+str(distance.euclidean(closestPoint, c)) )
+       
+    #print(closestPoint)
+    return distance.euclidean(closestPoint, c)
+
+def canScore(attackingPlayers, defendingPlayers, d):
+    play2=[]
+    passall=[]
+    for i in range(0,len(attackingPlayers)) :
+        pass2=[]
+        play1=attackingPlayers[i]
+        for j in range(i+1, len(attackingPlayers)):
+            play2 = attackingPlayers[j]
+            pass1=1
+            #print("play1:"+str(play1)+"play2:"+str(play2))
+            for k in range(0, len(defendingPlayers)):
+                def1 = defendingPlayers[k]
+                dist = distanceToSegment(play1,play2,def1)
+                if dist < d:
+                    pass1=0
+                #print("play1:"+str(play1)+"play2:"+str(play2)+"Def"+str(def1)+"dist:"+str(dist)+"Pass"+str(pass1))
+            pass2.append(pass1)
+        if pass2 :    
+            passall.append(pass2)
+
+    success=False        
+    for i in range(0,len(passall)):
+        print(passall[i])
+        if 1 in passall[i]:
+            success=True
+        else:
+            success=False
+            break
+    return success           
+
+
+import numpy as np
+def brothersInTheBar(glasses):
+    gulgp=True
+    count=0
+    a_glass = np.array(glasses)
+    i=0
+    N = len(a_glass)
+    while i < N:
+        #print("here"+str(len(a_glass)) + str(i))
+        if (i+2) <N and a_glass[i] == a_glass[i+1] and a_glass[i] == a_glass[i+2]:
+            #x = np.array([i,i+1,i+2])
+            a_glass=np.delete(a_glass,np.array([i,i+1,i+2]))
+            N=len(a_glass)
+            #print(a_glass)
+            count=count+1
+            i=0
+        else:
+            i=i+1
+            continue
+    return count     
