@@ -391,7 +391,7 @@ def referFriends(userInfo):
         dfm = pd.merge(df,dfg, left_on='_id',right_on='referrerId', how='left')
         dfm.fillna(0.0,inplace=True)
         dfm.referralB = dfm.referralB.astype(int)
-        dfm['text'] =  dfm.apply(lambda x: x['username_x']+' $'+str(x['referralB']), axis=1)
+        dfm['text'] =  dfm.apply(lambda x: x['username_x']+' $'+str(x['referralB'])xis=1)
         dfm.sort_values('text', inplace=True)
         return dfm['text'].tolist()
     else:
@@ -518,3 +518,111 @@ def brothersInTheBar(glasses):
             i=i+1
             continue
     return count     
+
+import numpy as np
+def bugBGone(area):
+    #First find out the number of squares
+    area=np.array(area)
+    ymax,xmax = np.shape(area)
+    print(ymax)
+    mult = int(4/4)
+    y = 0
+    gcou=0
+    ycou = 0
+    while y <ymax: 
+        x=0
+        while x <xmax:
+            arr = area[y:y+2*mult,x:x+2*mult]
+            #print(arr)
+            mcou=0
+            for (i,j), value in np.ndenumerate(arr):
+                if  value == 1 :
+                    print("match")
+                    mcou=mcou+1
+                    ycou=ycou+1
+            if mcou == 1: #When 1 tree
+                gcou=gcou+1 
+            if mcou > 1: #when > 1 tree
+                gcou=gcou+mcou+(4-mcou)
+            if mcou == 0:
+                gcou=gcou+1 #When no trees
+            #print("gcou:"+str(gcou)+"loc:"+str(mcou))
+            x=x+2
+            #print("block Finished")
+        y=y+2    
+    #Case where entire array has only one tree area
+    if ycou==1:
+        gcou=ycou
+            
+    return gcou
+
+import numpy as np
+import pandas as pd
+def frisbees(friends, numberOfPasses, startingPlayer):
+    noof = len(friends)
+    fr = {}
+    for i in range(0,len(friends)):
+        dist=[]
+        for j in range(0,len(friends)):
+            dist.append(np.linalg.norm(np.array([friends[i][0],friends[i][1]])-np.array([friends[j][0],friends[j][1]])))
+        fr[i] = dist
+    df =pd.DataFrame(fr)
+    #print(df)
+    pass=0
+    while pass <= numberOfPasses:
+        #start from Player0
+        
+    return 4
+
+For array1 = [12, 6, 8, 3], array2 = [1, 3, 5, 8], and array3 = [9, 15, 7, 5], the output should be combinationCount(array1, array2, array3) = 7.
+
+The possible combinations are:
+{3, 5, 7}
+{3, 5, 9}
+{3, 5, 15}
+{3, 8, 9}
+{3, 8, 15}
+{6, 8, 9}
+{6, 8, 15}
+
+def combinationCount(array1, array2, array3):
+    start_time = timeit.default_timer()
+    #t1 = [(f,k) for f in array2 for k in array3 if k>f]
+    
+    t = [(i, f,k) for i in array1 for f in array2 for k in array3 if k>f>i]
+    #t2 = [(i,f[0],f[1]) for i in array1 for f in t1 if  i < f[0] ]
+    elapsed = timeit.default_timer() - start_time
+    print("Elapsed DF:",elapsed)
+    return(len(t))
+   
+
+   select  x.name from projectLog x
+  where x.timestamp >= ( select max(b.timestamp) from projectLog b where b.name = x.name )
+ order by x.timestamp asc;
+
+
+def takingAttendance(classList):
+    time_total=0
+    for i in range(0,len(classList)):
+        #print(classList[i])
+        time_each=5
+        str = classList[i].lower()
+        cons_count=0
+        cons_arr=[]
+        for j in range(0,len(str)):
+            #print(str[j])
+            if str[j] not in ['a','e','i','o','u','y']:
+                cons_count=cons_count+1
+            else :
+                if cons_count != 0:
+                    cons_arr.append(cons_count)
+                cons_count=0
+            if j == (len(str)-1) and str[j] not in ['a','e','i','o','u','y'] :
+                #print(str[j], cons_count)
+                cons_arr.append(cons_count)
+        for k in range(0,len(cons_arr)):
+            time_each = time_each + pow(2,cons_arr[k]-1)
+        
+        time_total=time_total + time_each            
+        print(str, time_each,time_total)
+    return time_total
